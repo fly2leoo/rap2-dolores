@@ -78,10 +78,10 @@ export class RepositoriesTypeDropdown extends Component {
   }
   render () {
     let { url } = this.props
+    //<option value='/repository/all'>所有仓库</option>
     return (
       <select className='RepositoriesTypeDropdown form-control float-left w160 mr12' value={url} onChange={e => this.handlePush(e.target.value)} size='1'>
         <option value='/repository/joined'>我拥有和加入的仓库</option>
-        <option value='/repository/all'>所有仓库</option>
       </select>
     )
   }

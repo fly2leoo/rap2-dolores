@@ -69,10 +69,10 @@ export class OrganizationsTypeDropdown extends Component {
   }
   render () {
     let { url } = this.props
+    //<option value='/organization/all'>全部团队</option>
     return (
       <select className='OrganizationsTypeDropdown form-control float-left w160 mr12' value={url} onChange={e => this.handlePush(e.target.value)} size='1'>
         <option value='/organization/joined'>我拥有和加入的团队</option>
-        <option value='/organization/all'>全部团队</option>
       </select>
     )
   }

@@ -23,19 +23,27 @@ const UserList = ({ history, match, location, users, onAddUser, onDeleteUser, on
       <table className='table'>
         <thead>
           <tr>
+            <th>ID</th>
             <th>姓名</th>
             <th>邮箱</th>
-            <th className='w100'>操作</th>
+            <th>注册时间</th>
+            <th>操作</th>
           </tr>
         </thead>
         <tbody>
           {users.data.map(user =>
             <tr key={user.id}>
               <td>
-                <Link to={`/repository?user=${user.id}`}>#{user.id} {user.fullname}</Link>
+                <Link to={`/repository?user=${user.id}`}>#{user.id}</Link>
               </td>
+              <td>{user.fullname}</td>
               <td>{user.email}</td>
+              <td>{user.createdAt}</td>
               <td>
+                <span style={{ cursor: 'not-allowed' }}>
+                  <Link to={match.url} onClick={e => onDeleteUser(user.id)} className='operation disabled'>编辑</Link>
+                </span>
+                <span style={{ cursor: 'not-allowed' }}> | </span>
                 <span style={{ cursor: 'not-allowed' }}>
                   <Link to={match.url} onClick={e => onDeleteUser(user.id)} className='operation disabled'>删除</Link>
                 </span>

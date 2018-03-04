@@ -14,6 +14,8 @@ const Footer = ({ counter = {} }) => (
       <li><a href='https://www.mucaimatou.com' target='_blank'>木材码头</a></li>
     </ul>
     <ul className='friend_links'>
+      <li>Powered By</li>
+      <li><a href='https://github.com/fly2leoo' target='_blank' rel='noopener noreferrer' title='fly2leo'>fly2leoo</a></li>
       <li><a href='http://rap.alibaba-inc.com/' target='_blank' rel='noopener noreferrer'>RAP0.x</a></li>
       <li><a href='http://mockjs.com/' target='_blank' rel='noopener noreferrer'>Mock.js</a></li>
       <li><a href='https://thx.github.io/' target='_blank' rel='noopener noreferrer'>THX</a></li>
