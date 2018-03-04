@@ -42,9 +42,24 @@ class API extends React.Component {
     return (
       <section className='APIList'>
         <div className='header'>
-          <span className='title'>接口</span>
+          <span className='title'>接口说明</span>
         </div>
         <div className='body'>
+          <div className='API'>
+            <div className='title'>Mock地址：<span><code>{serve}/app/mock/[RepositoryID]/[API-URL]</code></span></div>
+            <ul>
+              <li>例如，<a href='http://rest.mock.emulian.com/app/mock/16/na/g/one/test.service' target='_blank'><code>{serve}/app/mock/16/na/g/one/test.service</code></a></li>
+              <li>其中<code>"{serve}/app/mock/"</code>为固定前缀地址，<code>"16"</code>为[仓库ID]，<code>"na/g/one/test.service"</code>为接口定义的[地址]</li>
+            </ul>
+          </div>
+          <div className='API'>
+            <div className='title'>仓库-模块-接口定义</div>
+            <ul>
+              <li>【仓库】命名与产品线名称相同，或与项目名称相同，使用字母缩写，例如<code>mcmt</code>、<code>mlzx</code>、<code>dcredit</code>、<code>fadmin</code>。</li>
+              <li>【模块】命名使用中文名称+后端模块名称，例如<code>木联账户[EmuAccount]</code>、<code>平安支付[EmuPinan]</code>，每个模块包含具有紧密业务联系的接口，便于查找。</li>
+              <li>【接口】命名应体现该API的功能，例如<code>添加运踪订单</code>、<code>查看运踪订单</code>；接口[地址]定义不以<code>“/”</code>开头，[类型]设置为<code>GET</code>或者<code>POST</code>，返回参数注意定义[生成规则]。</li>
+            </ul>
+          </div>
           <div className='API'>
             <div className='title'>获取仓库的完整数据（JSON）</div>
             <ul>
