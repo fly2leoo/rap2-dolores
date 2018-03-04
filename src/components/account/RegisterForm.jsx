@@ -34,6 +34,7 @@ class RegisterForm extends Component {
           <div className='form-group'>
             <label>姓名：</label>
             <input value={this.state.fullname} onChange={e => this.setState({ fullname: e.target.value })} className='form-control' placeholder='Name' autoFocus='true' required />
+            <span className='help-block'><i>*请输入真实姓名，便于添加团队成员</i></span>
           </div>
           <div className='form-group'>
             <label>邮箱(仅限e木联企业邮箱)：</label>
@@ -51,6 +52,7 @@ class RegisterForm extends Component {
           <div className='form-group'>
             <label>密码：</label>
             <input value={this.state.password} onChange={e => this.setState({ password: e.target.value })} type='password' className='form-control' placeholder='Password' required />
+            <span className='help-block'><i>*请输入6位以上密码，若忘记密码联系管理员 @张敏 重置</i></span>
           </div>
           <button type='submit' className='btn btn-primary w140 mr20'>提交</button>
           <Link to='/account' className=''>取消</Link>
