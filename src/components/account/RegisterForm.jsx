@@ -9,7 +9,7 @@ import './RegisterForm.css'
 const mockUser = process.env.NODE_ENV === 'development'
   ? () => Mock.mock({
     fullname: '@CNAME',
-    email: '@email',
+    email: 'your_email_name',
     password: '@string(6)'
   })
   : () => ({
@@ -36,8 +36,17 @@ class RegisterForm extends Component {
             <input value={this.state.fullname} onChange={e => this.setState({ fullname: e.target.value })} className='form-control' placeholder='Name' autoFocus='true' required />
           </div>
           <div className='form-group'>
-            <label>邮箱：</label>
-            <input value={this.state.email} onChange={e => this.setState({ email: e.target.value })} className='form-control' placeholder='Email' required />
+            <label>邮箱(仅限e木联企业邮箱)：</label>
+            <div className='input-group'>
+              <input value={this.state.email} onChange={e => this.setState({ email: e.target.value })} className='form-control' placeholder='Email' required />
+              <select className='input-group-addon' onChange={e => this.setState({ emailext: e.target.value })} >
+                <option>@请选择后缀</option>
+                <option value='@emulian.com'>@emulian.com</option>
+                <option value='@mucaimatou.com'>@mucaimatou.com</option>
+                <option value='@mucaimatou.cn'>@mucaimatou.cn</option>
+              </select>
+            </div>
+            <span className='help-block'><i>*请输入企业邮箱名称</i></span>
           </div>
           <div className='form-group'>
             <label>密码：</label>
